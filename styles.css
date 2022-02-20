@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.amcharts-bg{
+    width: 100%;
+    fill: #fff !important;
+}
+.body{
+    background-color: red;
+}
+path:hover{
+fill: red;
+}
+
+.active{
+    fill: yellow;
+}
