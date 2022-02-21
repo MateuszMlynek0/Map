@@ -1,44 +1,24 @@
-import CountryAPI from "/CountryAPI.js";
+const list = ['Unitaed States','Poland','England','Canada']
+const selectCountry = document.querySelectorAll('path')
 
-export default class App {
-    constructor(root) {
-        this.country = [];
-        this.activeNote = null;
-        this.view = new NotesView(root, this._handlers());
-        this._refreshNotes();
-    }
 
-    _refreshNotes() {
-        const notes = CountryAPI.getAllNotes();
-        this._setNotes(notes);
 
-        if (notes.length > 0) {
-            this._setActiveNote(notes[0]);
-        }
-    }
+console.log(selectCountry)
 
-    _setNotes(notes) {
-        this.notes = notes;
-        this.view.updateNoteList(notes);
-        this.view.updatreNotePreviewVIsivility(notes.length > 0);
-    }
 
-    _handlers() {
+selectCountry.forEach(item=>{
+item.addEventListener('click',()=>{
+    item.classList.toggle('active');
+});
+})
 
-        return {
-            onNoteAdd: () => {
-                // const newNote = {
-                //     title: "New Note",
-                //     body: "Take Note..."
-                // };
 
-                CountryAPI.saveNote(newNote);
-                this._refreshNotes();
-            },
-            onNoteDelete: noteId => {
-                CountryAPI.deleteNote(noteId);
-                this._refreshNotes();
-            }
-        };
-    }
-}
+const countriesDiv = document.querySelector(".countries-nav__items")
+
+
+let el = document.createElement("TAG")
+el.innerHTML = 
+`<label>
+    <input type="checkbox" name="us" value="us">United States
+</label> `;
+countriesDiv.appendChild(el)
